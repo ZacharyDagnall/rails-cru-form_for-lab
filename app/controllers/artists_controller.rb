@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
 
     def index
-        @artists = Artist.all.uniq{|artist| artist.name.downcase} #trying to remove duplicate names with different capitalizations
+        @artists = Artist.all
     end
 
     def show
