@@ -3,7 +3,7 @@ class Song < ApplicationRecord
     belongs_to :genre
 
     def artist_name=(name)
-        self.artist = Artist.find_or_create_by(name: name)
+        self.artist = Artist.find_or_create_by(name: name.downcase.titleize)
     end
 
     def artist_name
