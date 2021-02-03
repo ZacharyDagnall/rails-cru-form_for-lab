@@ -16,7 +16,7 @@
 <%= form_for @song do |f| %>
     <%= f.label :name, "Name: " %>
     <%= f.text_field :name %>
-    <%= f.hidden_field :artist_name, value: @artist.name%>
+    <%= f.hidden_field :artist_id, value: @artist.id%>
     <%= f.label :genre_name, "Genre: " %>
     <%= f.text_field :genre_name %>
     <%= f.submit "Here we go!" %>

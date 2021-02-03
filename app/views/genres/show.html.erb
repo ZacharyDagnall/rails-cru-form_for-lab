@@ -18,7 +18,7 @@
     <%= f.text_field :name %>
     <%= f.label :artist_name, "Artist: "%>
     <%= f.text_field :artist_name %>
-    <%= f.hidden_field :genre_name, value: @genre.name %>
+    <%= f.hidden_field :genre_id, value: @genre.id %>
     <%= f.submit "Here we go!" %>
 <% end %>
 
