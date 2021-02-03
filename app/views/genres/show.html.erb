@@ -1,0 +1,25 @@
+<h1> <%=@genre.name%> </h1>
+
+<h3> here are the songs in this genre! </h3>
+<ul>
+    <% @genre.songs.each do |song| %>
+       <li> <%= link_to song.name, song_path(song) %> by <%= link_to song.artist_name, artist_path(song.artist) %> </li>
+    <% end %>
+</ul>
+
+<%= link_to "Edit Genre info", edit_genre_path(@genre) %>
+<%= button_to "Delete this Genre", genre_path(@genre), method: "delete" %>
+
+<%= link_to "Back to all Genres", genres_path(@genre) %>
+
+<h4> Add a song to this genre </h4>
+<%= form_for @song do |f| %>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name %>
+    <%= f.label :artist_name, "Artist: "%>
+    <%= f.text_field :artist_name %>
+    <%= f.hidden_field :genre_name, value: @genre.name %>
+    <%= f.submit "Here we go!" %>
+<% end %>
+
+<%= link_to "Home!", root_path %>

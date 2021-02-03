@@ -1,0 +1,7 @@
+<h1> list a new artist </h1>
+
+<%= form_for @artist do |f| %>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name %>
+    <%= f.submit "Here we go!" %>
+<% end %>
