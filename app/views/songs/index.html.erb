@@ -4,8 +4,7 @@
     <% @songs.each do |song| %>
         <li> <%= link_to song.name, song_path(song) %> </li>
     <% end %>
-
-    <%= link_to "List a new song!", new_song_path %>
-    <%= link_to "Home!", root_path %>
-
 </ul>
+
+<p> <%= link_to "List a new song!", new_song_path %> </p>
+<p> <%= link_to "Home!", root_path %> </p>

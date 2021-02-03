@@ -1,10 +1,10 @@
 <h1> <%= @song.name %> </h1>
-<h2> <%= link_to @song.artist_name, artist_path(@song.artist) unless !@song.artist %> </h2>
-<h2> <%= link_to @song.genre_name, genre_path(@song.genre) unless !@song.genre %> </h2>
+<h4> <%= link_to @song.artist_name, artist_path(@song.artist) unless !@song.artist %> </h4>
+<h4> <%= link_to @song.genre_name, genre_path(@song.genre) unless !@song.genre %> </h4>
 
-<%= link_to "Edit song info", edit_song_path(@song) %>
-<%= button_to "Delete this song", song_path(@song), method: "delete" %>
+<p> <%= link_to "Edit song info", edit_song_path(@song) %> </p>
+<p> <%= button_to "Delete this song", song_path(@song), method: "delete" %> </p>
 
-<%= link_to "Back to all songs", songs_path(@song) %>
+<p> <%= link_to "Back to all songs", songs_path(@song) %> </p>
 
-<%= link_to "Home!", root_path %>
+<p> <%= link_to "Home!", root_path %> </p>

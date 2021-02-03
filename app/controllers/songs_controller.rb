@@ -13,7 +13,15 @@ class SongsController < ApplicationController
 
     def create
         @song = Song.create(song_params)
-        redirect_to song_path(@song)
+        if request.referer.include?("/songs")
+            redirect_to song_path(@song)
+        elsif request.referer.include?("/artists")
+            redirect_to artist_path(@song.artist)
+        elsif request.referer.include?("/genres")
+            redirect_to genre_path(@song.genre)
+        else
+            redirect_to root_path
+        end
     end
 
     def edit
