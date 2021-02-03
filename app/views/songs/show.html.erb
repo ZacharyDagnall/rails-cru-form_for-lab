@@ -1,0 +1,10 @@
+<h1> <%= @song.name %> </h1>
+<h2> <%= link_to @song.artist_name, artist_path(@song.artist) unless !@song.artist %> </h2>
+<h2> <%= link_to @song.genre_name, genre_path(@song.genre) unless !@song.genre %> </h2>
+
+<%= link_to "Edit song info", edit_song_path(@song) %>
+<%= button_to "Delete this song", song_path(@song), method: "delete" %>
+
+<%= link_to "Back to all songs", songs_path(@song) %>
+
+<%= link_to "Home!", root_path %>

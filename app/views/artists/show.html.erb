@@ -1,0 +1,25 @@
+<h1> <%=@artist.name%> </h1>
+
+<h3> here are their songs! </h3>
+<ul>
+    <% @artist.songs.each do |song| %>
+       <li> <%= link_to song.name, song_path(song) %> </li>
+    <% end %>
+</ul>
+
+<%= link_to "Edit Artist info", edit_artist_path(@artist) %>
+<%= button_to "Delete this artist", artist_path(@artist), method: "delete" %>
+
+<%= link_to "Back to all Artists", artists_path(@artist) %>
+
+<h4> Add a song to this artist </h4>
+<%= form_for @song do |f| %>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name %>
+    <%= f.hidden_field :artist_name, value: @artist.name%>
+    <%= f.label :genre_name, "Genre: " %>
+    <%= f.text_field :genre_name %>
+    <%= f.submit "Here we go!" %>
+<% end %>
+
+<%= link_to "Home!", root_path %>
